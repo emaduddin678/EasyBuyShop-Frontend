@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks.js";
-import styles from "./Counter.module.css";
 import {
   increment,
   incrementAsync,
@@ -14,11 +13,7 @@ const Counter = () => {
   const count = useAppSelector(selectCount);
   const status = useAppSelector(selectStatus);
 
-  return (
-    <div>
-    
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Counter;
