@@ -103,7 +103,7 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon, ChevronRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
   FunnelIcon,
@@ -119,7 +119,7 @@ const sortOptions = [
   { name: "Price: Low to High", href: "#", current: false },
   { name: "Price: High to Low", href: "#", current: false },
 ];
- 
+
 const filters = [
   {
     id: "color",
@@ -203,7 +203,6 @@ const ProductList = () => {
 
               {/* Filters */}
               <form className="mt-4 border-t border-gray-200">
-               
                 {filters.map((section) => (
                   <Disclosure
                     key={section.id}
@@ -282,7 +281,7 @@ const ProductList = () => {
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between border-b border-gray-200 pt-24 pb-6">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-              New Arrivals
+              All Products
             </h1>
 
             <div className="flex items-center">
@@ -347,8 +346,6 @@ const ProductList = () => {
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
               {/* Filters */}
               <form className="hidden lg:block">
-               
-
                 {filters.map((section) => (
                   <Disclosure
                     key={section.id}
@@ -425,249 +422,21 @@ const ProductList = () => {
               {/* Product grid */}
               <section className="w-full lg:col-span-3">
                 {" "}
-                <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+                <div className="mx-auto max-w-screen-xl px-4 sm:px-6 sm:py-2 lg:px-8">
                   <header>
                     <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
-                      Product Collection
+                      Laptop Collection
                     </h2>
 
-                    <p className="mt-4 max-w-md text-gray-500">
+                    <p className="mt-1 max-w-2xl text-gray-500">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                       Itaque praesentium cumque iure dicta incidunt est ipsam,
                       officia dolor fugit natus?
                     </p>
                   </header>
 
-                  <div className="mt-8 sm:flex sm:items-center sm:justify-between">
-                    <div className="block sm:hidden">
-                      <button
-                        onClick={() => setIsModalOpen(true)}
-                        className="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600"
-                      >
-                        <span className="text-sm font-medium">
-                          {" "}
-                          Filters & Sorting{" "}
-                        </span>
-
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="size-4 rtl:rotate-180"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-
-                    <div className="hidden sm:flex sm:gap-4">
-                      <div className="relative">
-                        <details className="group [&_summary::-webkit-details-marker]:hidden">
-                          <summary className="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600">
-                            <span className="text-sm font-medium">
-                              {" "}
-                              Availability{" "}
-                            </span>
-
-                            <span className="transition group-open:-rotate-180">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth="1.5"
-                                stroke="currentColor"
-                                className="size-4"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                                />
-                              </svg>
-                            </span>
-                          </summary>
-
-                          <div className="z-50 group-open:absolute group-open:top-auto group-open:mt-2 ltr:group-open:start-0">
-                            <div className="w-96 rounded-sm border border-gray-200 bg-white">
-                              <header className="flex items-center justify-between p-4">
-                                <span className="text-sm text-gray-700">
-                                  {" "}
-                                  0 Selected{" "}
-                                </span>
-
-                                <button
-                                  type="button"
-                                  className="text-sm text-gray-900 underline underline-offset-4"
-                                >
-                                  Reset
-                                </button>
-                              </header>
-
-                              <ul className="space-y-1 border-t border-gray-200 p-4">
-                                <li>
-                                  <label
-                                    htmlFor="FilterInStock"
-                                    className="inline-flex items-center gap-2"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      id="FilterInStock"
-                                      className="size-5 rounded-sm border-gray-300 shadow-sm"
-                                    />
-
-                                    <span className="text-sm font-medium text-gray-700">
-                                      {" "}
-                                      In Stock (5+){" "}
-                                    </span>
-                                  </label>
-                                </li>
-
-                                <li>
-                                  <label
-                                    htmlFor="FilterPreOrder"
-                                    className="inline-flex items-center gap-2"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      id="FilterPreOrder"
-                                      className="size-5 rounded-sm border-gray-300 shadow-sm"
-                                    />
-
-                                    <span className="text-sm font-medium text-gray-700">
-                                      {" "}
-                                      Pre Order (3+){" "}
-                                    </span>
-                                  </label>
-                                </li>
-
-                                <li>
-                                  <label
-                                    htmlFor="FilterOutOfStock"
-                                    className="inline-flex items-center gap-2"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      id="FilterOutOfStock"
-                                      className="size-5 rounded-sm border-gray-300 shadow-sm"
-                                    />
-
-                                    <span className="text-sm font-medium text-gray-700">
-                                      {" "}
-                                      Out of Stock (10+){" "}
-                                    </span>
-                                  </label>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </details>
-                      </div>
-
-                      <div className="relative">
-                        <details className="group [&_summary::-webkit-details-marker]:hidden">
-                          <summary className="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600">
-                            <span className="text-sm font-medium"> Price </span>
-
-                            <span className="transition group-open:-rotate-180">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth="1.5"
-                                stroke="currentColor"
-                                className="size-4"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                                />
-                              </svg>
-                            </span>
-                          </summary>
-
-                          <div className="z-50 group-open:absolute group-open:top-auto group-open:mt-2 ltr:group-open:start-0">
-                            <div className="w-96 rounded-sm border border-gray-200 bg-white">
-                              <header className="flex items-center justify-between p-4">
-                                <span className="text-sm text-gray-700">
-                                  {" "}
-                                  The highest price is $600{" "}
-                                </span>
-
-                                <button
-                                  type="button"
-                                  className="text-sm text-gray-900 underline underline-offset-4"
-                                >
-                                  Reset
-                                </button>
-                              </header>
-
-                              <div className="border-t border-gray-200 p-4">
-                                <div className="flex justify-between gap-4">
-                                  <label
-                                    htmlFor="FilterPriceFrom"
-                                    className="flex items-center gap-2"
-                                  >
-                                    <span className="text-sm text-gray-600">
-                                      $
-                                    </span>
-
-                                    <input
-                                      type="number"
-                                      id="FilterPriceFrom"
-                                      placeholder="From"
-                                      className="w-full rounded-sm px-0.5 border-gray-200 shadow-xs sm:text-sm focusStyle"
-                                    />
-                                  </label>
-
-                                  <label
-                                    htmlFor="FilterPriceTo"
-                                    className="flex items-center gap-2"
-                                  >
-                                    <span className="text-sm text-gray-600">
-                                      $
-                                    </span>
-
-                                    <input
-                                      type="number"
-                                      id="FilterPriceTo"
-                                      placeholder="To"
-                                      className="w-full rounded-sm px-0.5 border-gray-200 shadow-xs sm:text-sm focusStyle"
-                                    />
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </details>
-                      </div>
-                    </div>
-
-                    <div className="hidden sm:block">
-                      <label htmlFor="SortBy" className="sr-only">
-                        SortBy
-                      </label>
-
-                      <select
-                        id="SortBy"
-                        className="h-10 rounded-sm border-gray-300 text-sm focusStyle"
-                      >
-                        <option>Sort By</option>
-                        <option value="Title, DESC">Title, DESC</option>
-                        <option value="Title, ASC">Title, ASC</option>
-                        <option value="Price, DESC">Price, DESC</option>
-                        <option value="Price, ASC">Price, ASC</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <ul className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                  {/* product list start  */}
+                  <ul className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                     {products.map((product) => (
                       <li key={product.id} className="group relative">
                         <img
@@ -697,6 +466,102 @@ const ProductList = () => {
                       </li>
                     ))}
                   </ul>
+                  {/* product list end  */}
+                  {/* pagination start  */}
+                  <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+                    <div className="flex flex-1 justify-between sm:hidden">
+                      <a
+                        href="#"
+                        className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                      >
+                        Previous
+                      </a>
+                      <a
+                        href="#"
+                        className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                      >
+                        Next
+                      </a>
+                    </div>
+                    <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                      <div>
+                        <p className="text-sm text-gray-700">
+                          Showing <span className="font-medium">1</span> to{" "}
+                          <span className="font-medium">10</span> of{" "}
+                          <span className="font-medium">97</span> results
+                        </p>
+                      </div>
+                      <div>
+                        <nav
+                          aria-label="Pagination"
+                          className="isolate inline-flex -space-x-px rounded-md shadow-xs"
+                        >
+                          <a
+                            href="#"
+                            className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                          >
+                            <span className="sr-only">Previous</span>
+                            <ChevronLeftIcon
+                              aria-hidden="true"
+                              className="size-5"
+                            />
+                          </a>
+                          {/* Current: "z-10 bg-indigo-600 text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" */}
+                          <a
+                            href="#"
+                            aria-current="page"
+                            className="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                          >
+                            1
+                          </a>
+                          <a
+                            href="#"
+                            className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                          >
+                            2
+                          </a>
+                          <a
+                            href="#"
+                            className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
+                          >
+                            3
+                          </a>
+                          <span className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-gray-300 ring-inset focus:outline-offset-0">
+                            ...
+                          </span>
+                          <a
+                            href="#"
+                            className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
+                          >
+                            8
+                          </a>
+                          <a
+                            href="#"
+                            className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                          >
+                            9
+                          </a>
+                          <a
+                            href="#"
+                            className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                          >
+                            10
+                          </a>
+                          <a
+                            href="#"
+                            className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-gray-300 ring-inset hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                          >
+                            <span className="sr-only">Next</span>
+                            <ChevronRightIcon
+                              aria-hidden="true"
+                              className="size-5"
+                            />
+                          </a>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                  {/* pagination end  */}
                 </div>
                 {isModalOpen && (
                   <div

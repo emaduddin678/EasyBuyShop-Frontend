@@ -7,7 +7,11 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  ShoppingCartIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 
 const user = {
   name: "Tom Cook",
@@ -16,7 +20,7 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
+  { name: "Easy Buy Shop", href: "#", current: true },
   { name: "Team", href: "#", current: false },
   { name: "Projects", href: "#", current: false },
   { name: "Calendar", href: "#", current: false },
@@ -74,8 +78,10 @@ const Navbar = ({ children }) => {
                     className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
                   >
                     <span className="absolute -inset-1.5" />
-                    <span className="sr-only">View notifications</span>
-                    <BellIcon aria-hidden="true" className="size-6" />
+                    <ShoppingCartIcon aria-hidden="true" className="size-6" />
+                    <span className="absolute -top-1 -right-1 inline-flex items-center rounded-md bg-red-50 px-1 text-xs font-medium text-red-700 ring-1 ring-red-600/10 ring-inset">
+                      4
+                    </span>
                   </button>
 
                   {/* Profile dropdown */}
@@ -168,8 +174,11 @@ const Navbar = ({ children }) => {
                   className="relative ml-auto shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
                 >
                   <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon aria-hidden="true" className="size-6" />
+
+                  <ShoppingCartIcon aria-hidden="true" className="size-6" />
+                  <span className="absolute -top-1 -right-1 inline-flex items-center rounded-md bg-red-50 px-1 text-xs font-medium text-red-700 ring-1 ring-red-600/10 ring-inset">
+                    3
+                  </span>
                 </button>
               </div>
               <div className="mt-3 space-y-1 px-2">
@@ -191,7 +200,7 @@ const Navbar = ({ children }) => {
         <header className="bg-white shadow-sm">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-              Dashboard
+              Easy Buy Shop
             </h1>
           </div>
         </header>
