@@ -1,4 +1,6 @@
 import "./App.css";
+import Cart from "./features/cart/Cart";
+import CartFlowbit from "./features/cart/CartFlowbit";
 import ProductList from "./features/product-list/ProductList";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -14,6 +16,16 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignupPage />,
+  },
+  {
+    //only for demo purposes, this should be removed in production
+    path: "/cart",
+    element: (
+      <>
+        <CartFlowbit />
+        <Cart />,
+      </>
+    ),
   },
 ]);
 
