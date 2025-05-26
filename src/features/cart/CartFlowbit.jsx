@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router";
 
 const CartFlowbit = () => {
   return (
-    <section class="py-8 antialiased  md:py-16">
-      <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+    <section class="py-8 antialiased md:py-16">
+      <div class="mx-auto max-w-screen-xl bg-white px-4 2xl:px-6 py-2 md:py-4">
         <h2 class=" text-xl font-bold text-gray-900 sm:text-3xl">
           Shopping Cart
         </h2>
@@ -621,7 +622,7 @@ const CartFlowbit = () => {
                     <button
                       data-tooltip-target="favourites-tooltip-1"
                       type="button"
-                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  "
+                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  "
                     >
                       <svg
                         class="h-5 w-5"
@@ -649,7 +650,7 @@ const CartFlowbit = () => {
                     </div>
                     <button
                       type="button"
-                      class="inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 "
+                      class="inline-flex w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 "
                     >
                       <svg
                         class="-ms-2 me-2 h-5 w-5"
@@ -704,7 +705,7 @@ const CartFlowbit = () => {
                     <button
                       data-tooltip-target="favourites-tooltip-2"
                       type="button"
-                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  "
+                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  "
                     >
                       <svg
                         class="h-5 w-5"
@@ -732,7 +733,7 @@ const CartFlowbit = () => {
                     </div>
                     <button
                       type="button"
-                      class="inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 "
+                      class="inline-flex w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 "
                     >
                       <svg
                         class="-ms-2 me-2 h-5 w-5"
@@ -787,7 +788,7 @@ const CartFlowbit = () => {
                     <button
                       data-tooltip-target="favourites-tooltip-3"
                       type="button"
-                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  "
+                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  "
                     >
                       <svg
                         class="h-5 w-5"
@@ -816,7 +817,7 @@ const CartFlowbit = () => {
 
                     <button
                       type="button"
-                      class="inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 "
+                      class="inline-flex w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 "
                     >
                       <svg
                         class="-ms-2 me-2 h-5 w-5"
@@ -888,17 +889,16 @@ const CartFlowbit = () => {
 
               <a
                 href="#"
-                class="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 "
+                class="flex w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 "
               >
                 Proceed to Checkout
               </a>
 
               <div class="flex items-center justify-center gap-2">
                 <span class="text-sm font-normal text-gray-500 "> or </span>
-                <a
-                  href="#"
-                  title=""
-                  class="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline "
+                <Link
+                  to="/"
+                  class="inline-flex items-center gap-2 text-sm font-medium text-blue-700 underline hover:no-underline "
                 >
                   Continue Shopping
                   <svg
@@ -916,11 +916,11 @@ const CartFlowbit = () => {
                       d="M19 12H5m14 0-4 4m4-4-4-4"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
-            <div class="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm   sm:p-6">
+            <div class="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm hidden sm:p-6">
               <form class="space-y-4">
                 <div>
                   <label
@@ -933,14 +933,14 @@ const CartFlowbit = () => {
                   <input
                     type="text"
                     id="voucher"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                     placeholder=""
                     required
                   />
                 </div>
                 <button
                   type="submit"
-                  class="flex w-full items-center justify-center rounded-lg bg-cyan-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 "
+                  class="flex w-full items-center justify-center rounded-lg bg-cyan-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 "
                 >
                   Apply Code
                 </button>
