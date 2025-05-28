@@ -6,6 +6,55 @@ import {
 import React from "react";
 import CartFlowbit from "../features/cart/CartFlowbit";
 
+const deliveryAddresses = [
+  {
+    id: "addr_1",
+    fullName: "Rahim Uddin",
+    phone: "+880 1711-123456",
+    email: "rahim.uddin@example.com",
+    streetAddress: "House 23, Road 10, Sector 11",
+    city: "Uttara",
+    state: "Dhaka",
+    postalCode: "1230",
+    country: "Bangladesh",
+    type: "Home",
+    isDefault: true,
+    lastUsed: "2d ago",
+    lastUsedDateTime: "2025-05-27T14:30Z",
+  },
+  {
+    id: "addr_2",
+    fullName: "Sumaiya Akter",
+    phone: "+880 1812-654321",
+    email: "sumaiya.akter@example.com",
+    streetAddress: "Flat B4, House 12, Dhanmondi 4/A",
+    city: "Dhanmondi",
+    state: "Dhaka",
+    postalCode: "1209",
+    country: "Bangladesh",
+    type: "Work",
+    isDefault: false,
+    lastUsed: null,
+  },
+  {
+    id: "addr_3",
+    fullName: "Tanvir Hasan",
+    phone: "+880 1913-789012",
+    email: "tanvir.hasan@example.com",
+    streetAddress: "Plot 45, Block C, Bashundhara R/A",
+    city: "Bashundhara",
+    state: "Dhaka",
+    postalCode: "1229",
+    country: "Bangladesh",
+    type: "Other",
+    isDefault: false,
+    lastUsed: "1w ago",
+    lastUsedDateTime: "2025-05-20T09:00Z",
+  },
+];
+
+
+
 const CheckoutPage = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -178,8 +227,48 @@ const CheckoutPage = () => {
               Address Information
             </h2>
             <p className="mt-1 text-sm/6 text-gray-600">
-             
+              Choose from Existing addresses
             </p>
+            <ul role="list" className="divide-y divide-gray-100">
+              {deliveryAddresses.map((item) => (
+                <li key={item.id} className="flex justify-between gap-x-6 py-5">
+                  <div className="flex min-w-0 gap-x-4">
+                    <input type="radio" className="h-4 w-4 border-y-gray-300 text-indigo-500" />
+                    <div className="min-w-0 flex-auto">
+                      <p className="text-sm/6 font-semibold text-gray-900">
+                        {item.fullName}
+                      </p>
+                      <p className="mt-0.5 text-xs/5 text-gray-500">
+                        {item.phone}
+                      </p>
+                      <p className="mt-1 truncate text-xs/5 text-gray-500">
+                        {item.streetAddress}, {item.city}, {item.state}{" "}
+                        {item.postalCode}, {item.country}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                    <p className="text-sm/6 text-gray-900">{item.type}</p>
+                    {item.lastUsed ? (
+                      <p className="mt-1 text-xs/5 text-gray-500">
+                        Last used{" "}
+                        <time dateTime={item.lastUsedDateTime}>
+                          {item.lastUsed}
+                        </time>
+                      </p>
+                    ) : (
+                      <div className="mt-1 flex items-center gap-x-1.5">
+                        <div className="flex-none rounded-full bg-blue-500/20 p-1">
+                          <div className="size-1.5 rounded-full bg-blue-500" />
+                        </div>
+                        <p className="text-xs/5 text-gray-500">Active</p>
+                      </div>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+
             <div className="mt-10 space-y-10">
               <fieldset>
                 <legend className="text-sm/6 font-semibold text-gray-900">
