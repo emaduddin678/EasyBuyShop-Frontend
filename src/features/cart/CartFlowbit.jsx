@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
+import DeleteButton from "../../components/buttons/DeleteButton";
+import FavoriteButton from "../../components/buttons/FavoriteButton";
 
 const CartFlowbit = () => {
   return (
@@ -9,16 +11,16 @@ const CartFlowbit = () => {
           Shopping Cart
         </h2>
 
-        <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
+        <div class="mt-2 sm:mt-4 md:gap-6 lg:flexa lg:items-starta xl:gap-8">
           <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
-            <div class="space-y-2">
+            <div class="space-y-4">
               {/* single product start */}
-              <div class="rounded-sm border border-gray-200 bg-white p-4 shadow-sm   md:p-6">
+              <div class="border-b border-gray-200 bg-white px-4 py-2 md:px-6 md:py-3">
                 <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-4 md:space-y-0">
                   {/* product image start  */}
                   <div class="flex-none md:order-1">
                     <img
-                      class="w-20 "
+                      class="w-20 mx-auto"
                       src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"
                       alt="imac image"
                     />
@@ -29,818 +31,178 @@ const CartFlowbit = () => {
                   <label for="counter-input" class="sr-only">
                     Choose quantity:
                   </label>
-                  <div class="flex-none flex flex-col items-center gap-y-1 justify-between md:order-3 md:justify-end">
-                    <div class="flex order-6 gap-x-2 items-center">
-                      <button
-                        type="button"
-                        id="decrement-button"
-                        data-input-counter-decrement="counter-input"
-                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
-                      >
-                        <svg
-                          class="h-2.5 w-2.5 text-gray-900 "
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 2"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M1 1h16"
-                          />
-                        </svg>
-                      </button>
-                      <input
-                        type="text"
-                        id="counter-input"
-                        data-input-counter
-                        class="w-10 shrink-0 border-1 rounded-xs bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 "
-                        placeholder=""
-                        value="2"
-                        required
-                      />
-                      <button
-                        type="button"
-                        id="increment-button"
-                        data-input-counter-increment="counter-input"
-                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
-                      >
-                        <svg
-                          class="h-2.5 w-2.5 text-gray-900 "
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 18"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                          />
-                        </svg>
-                      </button>
+                  <div class="flex-none space-y-3 md:order-3 md:justify-end">
+                    <div class="flex items-center gap-4 gap-y-1 justify-center">
+                      <FavoriteButton />
+                      <DeleteButton />
                     </div>
-                    <div class="text-center md:order-4 md:w-32">
-                      <p class="text-base font-bold text-gray-900 ">$1,499</p>
-                    </div>
-                  </div>
-                  {/* quantity and price end  */}
-                  {/* product description, add to favorites and remove buttons start */}
-                  <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-lg">
-                    <a
-                      href="#"
-                      class="text-base font-medium text-gray-900 hover:underline "
-                    >
-                      PC system All in One APPLE iMac (2023) mqrq3ro/a, Apple
-                      M3, 24" Retina 4.5K, 8GB, SSD 256GB, 10-core GPU, Keyboard
-                      layout INT
-                    </a>
-
-                    <div class="flex items-center gap-4">
-                      <button
-                        type="button"
-                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline  "
-                      >
-                        <svg
-                          class="me-1.5 h-5 w-5"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="none"
-                          viewBox="0 0 24 24"
+                    <div className=" flex flex-col items-center gap-y-1 justify-between">
+                      <div class="flex order-6 gap-x-2 items-center">
+                        <button
+                          type="button"
+                          id="decrement-button"
+                          data-input-counter-decrement="counter-input"
+                          class="cursor-pointer inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
                         >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
-                          />
-                        </svg>
-                        Add to Favorites
-                      </button>
-
-                      <button
-                        type="button"
-                        class="inline-flex items-center text-sm font-medium text-red-600 hover:underline "
-                      >
-                        <svg
-                          class="me-1.5 h-5 w-5"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M6 18 17.94 6M18 18 6.06 6"
-                          />
-                        </svg>
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                  {/* product description, add to favorites and remove buttons start */}
-                </div>
-              </div>
-              {/* single product end */}
-              {/* single product start */}
-              <div class="rounded-sm border border-gray-200 bg-white p-4 shadow-sm   md:p-6">
-                <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-4 md:space-y-0">
-                  {/* product image start  */}
-                  <div class="flex-none md:order-1">
-                    <img
-                      class="w-20 "
-                      src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"
-                      alt="imac image"
-                    />
-                  </div>
-                  {/* product image end  */}
-
-                  {/* quantity and price start  */}
-                  <label for="counter-input" class="sr-only">
-                    Choose quantity:
-                  </label>
-                  <div class="flex-none flex flex-col items-center gap-y-1 justify-between md:order-3 md:justify-end">
-                    <div class="flex order-6 gap-x-2 items-center">
-                      <button
-                        type="button"
-                        id="decrement-button"
-                        data-input-counter-decrement="counter-input"
-                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
-                      >
-                        <svg
-                          class="h-2.5 w-2.5 text-gray-900 "
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 2"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M1 1h16"
-                          />
-                        </svg>
-                      </button>
-                      <input
-                        type="text"
-                        id="counter-input"
-                        data-input-counter
-                        class="w-10 shrink-0 border-1 rounded-xs bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 "
-                        placeholder=""
-                        value="2"
-                        required
-                      />
-                      <button
-                        type="button"
-                        id="increment-button"
-                        data-input-counter-increment="counter-input"
-                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
-                      >
-                        <svg
-                          class="h-2.5 w-2.5 text-gray-900 "
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 18"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div class="text-center md:order-4 md:w-32">
-                      <p class="text-base font-bold text-gray-900 ">$1,499</p>
-                    </div>
-                  </div>
-                  {/* quantity and price end  */}
-                  {/* product description, add to favorites and remove buttons start */}
-                  <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-lg">
-                    <a
-                      href="#"
-                      class="text-base font-medium text-gray-900 hover:underline "
-                    >
-                      PC system All in One APPLE iMac (2023) mqrq3ro/a, Apple
-                      M3, 24" Retina 4.5K, 8GB, SSD 256GB, 10-core GPU, Keyboard
-                      layout INT
-                    </a>
-
-                    <div class="flex items-center gap-4">
-                      <button
-                        type="button"
-                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline  "
-                      >
-                        <svg
-                          class="me-1.5 h-5 w-5"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
-                          />
-                        </svg>
-                        Add to Favorites
-                      </button>
-
-                      <button
-                        type="button"
-                        class="inline-flex items-center text-sm font-medium text-red-600 hover:underline "
-                      >
-                        <svg
-                          class="me-1.5 h-5 w-5"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M6 18 17.94 6M18 18 6.06 6"
-                          />
-                        </svg>
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                  {/* product description, add to favorites and remove buttons start */}
-                </div>
-              </div>
-              {/* single product end */}
-              {/* single product start */}
-              <div class="rounded-sm border border-gray-200 bg-white p-4 shadow-sm   md:p-6">
-                <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-4 md:space-y-0">
-                  {/* product image start  */}
-                  <div class="flex-none md:order-1">
-                    <img
-                      class="w-20 "
-                      src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"
-                      alt="imac image"
-                    />
-                  </div>
-                  {/* product image end  */}
-
-                  {/* quantity and price start  */}
-                  <label for="counter-input" class="sr-only">
-                    Choose quantity:
-                  </label>
-                  <div class="flex-none flex flex-col items-center gap-y-1 justify-between md:order-3 md:justify-end">
-                    <div class="flex order-6 gap-x-2 items-center">
-                      <button
-                        type="button"
-                        id="decrement-button"
-                        data-input-counter-decrement="counter-input"
-                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
-                      >
-                        <svg
-                          class="h-2.5 w-2.5 text-gray-900 "
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 2"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M1 1h16"
-                          />
-                        </svg>
-                      </button>
-                      <input
-                        type="text"
-                        id="counter-input"
-                        data-input-counter
-                        class="w-10 shrink-0 border-1 rounded-xs bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 "
-                        placeholder=""
-                        value="2"
-                        required
-                      />
-                      <button
-                        type="button"
-                        id="increment-button"
-                        data-input-counter-increment="counter-input"
-                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
-                      >
-                        <svg
-                          class="h-2.5 w-2.5 text-gray-900 "
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 18"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div class="text-center md:order-4 md:w-32">
-                      <p class="text-base font-bold text-gray-900 ">$1,499</p>
-                    </div>
-                  </div>
-                  {/* quantity and price end  */}
-                  {/* product description, add to favorites and remove buttons start */}
-                  <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-lg">
-                    <a
-                      href="#"
-                      class="text-base font-medium text-gray-900 hover:underline "
-                    >
-                      PC system All in One APPLE iMac (2023) mqrq3ro/a, Apple
-                      M3, 24" Retina 4.5K, 8GB, SSD 256GB, 10-core GPU, Keyboard
-                      layout INT
-                    </a>
-
-                    <div class="flex items-center gap-4">
-                      <button
-                        type="button"
-                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline  "
-                      >
-                        <svg
-                          class="me-1.5 h-5 w-5"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
-                          />
-                        </svg>
-                        Add to Favorites
-                      </button>
-
-                      <button
-                        type="button"
-                        class="inline-flex items-center text-sm font-medium text-red-600 hover:underline "
-                      >
-                        <svg
-                          class="me-1.5 h-5 w-5"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M6 18 17.94 6M18 18 6.06 6"
-                          />
-                        </svg>
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                  {/* product description, add to favorites and remove buttons start */}
-                </div>
-              </div>
-              {/* single product end */}
-              {/* single product start */}
-              <div class="rounded-sm border border-gray-200 bg-white p-4 shadow-sm   md:p-6">
-                <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-4 md:space-y-0">
-                  {/* product image start  */}
-                  <div class="flex-none md:order-1">
-                    <img
-                      class="w-20 "
-                      src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"
-                      alt="imac image"
-                    />
-                  </div>
-                  {/* product image end  */}
-
-                  {/* quantity and price start  */}
-                  <label for="counter-input" class="sr-only">
-                    Choose quantity:
-                  </label>
-                  <div class="flex-none flex flex-col items-center gap-y-1 justify-between md:order-3 md:justify-end">
-                    <div class="flex order-6 gap-x-2 items-center">
-                      <button
-                        type="button"
-                        id="decrement-button"
-                        data-input-counter-decrement="counter-input"
-                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
-                      >
-                        <svg
-                          class="h-2.5 w-2.5 text-gray-900 "
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 2"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M1 1h16"
-                          />
-                        </svg>
-                      </button>
-                      <input
-                        type="text"
-                        id="counter-input"
-                        data-input-counter
-                        class="w-10 shrink-0 border-1 rounded-xs bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 "
-                        placeholder=""
-                        value="2"
-                        required
-                      />
-                      <button
-                        type="button"
-                        id="increment-button"
-                        data-input-counter-increment="counter-input"
-                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
-                      >
-                        <svg
-                          class="h-2.5 w-2.5 text-gray-900 "
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 18 18"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 1v16M1 9h16"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                    <div class="text-center md:order-4 md:w-32">
-                      <p class="text-base font-bold text-gray-900 ">$1,499</p>
-                    </div>
-                  </div>
-                  {/* quantity and price end  */}
-                  {/* product description, add to favorites and remove buttons start */}
-                  <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-lg">
-                    <a
-                      href="#"
-                      class="text-base font-medium text-gray-900 hover:underline "
-                    >
-                      PC system All in One APPLE iMac (2023) mqrq3ro/a, Apple
-                      M3, 24" Retina 4.5K, 8GB, SSD 256GB, 10-core GPU, Keyboard
-                      layout INT
-                    </a>
-
-                    <div class="flex items-center gap-4">
-                      <button
-                        type="button"
-                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline  "
-                      >
-                        <svg
-                          class="me-1.5 h-5 w-5"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
-                          />
-                        </svg>
-                        Add to Favorites
-                      </button>
-
-                      <button
-                        type="button"
-                        class="inline-flex items-center text-sm font-medium text-red-600 hover:underline "
-                      >
-                        <svg
-                          class="me-1.5 h-5 w-5"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M6 18 17.94 6M18 18 6.06 6"
-                          />
-                        </svg>
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                  {/* product description, add to favorites and remove buttons start */}
-                </div>
-              </div>
-              {/* single product end */}
-            </div>
-            <div class="hidden xl:mt-8 xl:block">
-              <h3 class="text-2xl font-semibold text-gray-900 ">
-                People also bought
-              </h3>
-              <div class="mt-6 grid grid-cols-3 gap-4 sm:mt-8">
-                <div class="space-y-6 overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm  ">
-                  <a href="#" class="overflow-hidden rounded">
-                    <img
-                      class="mx-auto h-44 w-44 "
-                      src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
-                      alt="imac image"
-                    />
-                  </a>
-                  <div>
-                    <a
-                      href="#"
-                      class="text-lg font-semibold leading-tight text-gray-900 hover:underline "
-                    >
-                      iMac 27”
-                    </a>
-                    <p class="mt-2 text-base font-normal text-gray-500 ">
-                      This generation has some improvements, including a longer
-                      continuous battery life.
-                    </p>
-                  </div>
-                  <div>
-                    <p class="text-lg font-bold text-gray-900 ">
-                      <span class="line-through"> $399,99 </span>
-                    </p>
-                    <p class="text-lg font-bold leading-tight text-red-600 ">
-                      $299
-                    </p>
-                  </div>
-                  <div class="mt-6 flex items-center gap-2.5">
-                    <button
-                      data-tooltip-target="favourites-tooltip-1"
-                      type="button"
-                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  "
-                    >
-                      <svg
-                        class="h-5 w-5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"
-                        ></path>
-                      </svg>
-                    </button>
-                    <div
-                      id="favourites-tooltip-1"
-                      role="tooltip"
-                      class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 "
-                    >
-                      Add to favourites
-                      <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
-                    <button
-                      type="button"
-                      class="inline-flex w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 "
-                    >
-                      <svg
-                        class="-ms-2 me-2 h-5 w-5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4"
+                          <svg
+                            class="h-2.5 w-2.5 text-gray-900 "
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 2"
+                          >
+                            <path
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M1 1h16"
+                            />
+                          </svg>
+                        </button>
+                        <input
+                          type="text"
+                          id="counter-input"
+                          data-input-counter
+                          class="w-10 shrink-0 border-1 rounded-xs bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 "
+                          placeholder=""
+                          value="2"
+                          required
                         />
-                      </svg>
-                      Add to cart
-                    </button>
-                  </div>
-                </div>
-                <div class="space-y-6 overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm  ">
-                  <a href="#" class="overflow-hidden rounded">
-                    <img
-                      class="mx-auto h-44 w-44 "
-                      src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ps5-light.svg"
-                      alt="imac image"
-                    />
-                  </a>
-                  <div>
-                    <a
-                      href="#"
-                      class="text-lg font-semibold leading-tight text-gray-900 hover:underline "
-                    >
-                      Playstation 5
-                    </a>
-                    <p class="mt-2 text-base font-normal text-gray-500 ">
-                      This generation has some improvements, including a longer
-                      continuous battery life.
-                    </p>
-                  </div>
-                  <div>
-                    <p class="text-lg font-bold text-gray-900 ">
-                      <span class="line-through"> $799,99 </span>
-                    </p>
-                    <p class="text-lg font-bold leading-tight text-red-600 ">
-                      $499
-                    </p>
-                  </div>
-                  <div class="mt-6 flex items-center gap-2.5">
-                    <button
-                      data-tooltip-target="favourites-tooltip-2"
-                      type="button"
-                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  "
-                    >
-                      <svg
-                        class="h-5 w-5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"
-                        ></path>
-                      </svg>
-                    </button>
-                    <div
-                      id="favourites-tooltip-2"
-                      role="tooltip"
-                      class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 "
-                    >
-                      Add to favourites
-                      <div class="tooltip-arrow" data-popper-arrow></div>
+                        <button
+                          type="button"
+                          id="increment-button"
+                          data-input-counter-increment="counter-input"
+                          class="cursor-pointer inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
+                        >
+                          <svg
+                            class="h-2.5 w-2.5 text-gray-900 "
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 18"
+                          >
+                            <path
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 1v16M1 9h16"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="text-center md:order-4 md:w-32">
+                        <p class="text-base font-bold text-gray-900 ">$1,499</p>
+                      </div>
                     </div>
-                    <button
-                      type="button"
-                      class="inline-flex w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 "
-                    >
-                      <svg
-                        class="-ms-2 me-2 h-5 w-5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4"
-                        />
-                      </svg>
-                      Add to cart
-                    </button>
                   </div>
-                </div>
-                <div class="space-y-6 overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm  ">
-                  <a href="#" class="overflow-hidden rounded">
-                    <img
-                      class="mx-auto h-44 w-44 "
-                      src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/apple-watch-light.svg"
-                      alt="imac image"
-                    />
-                  </a>
-                  <div>
-                    <a
-                      href="#"
-                      class="text-lg font-semibold leading-tight text-gray-900 hover:underline "
-                    >
-                      Apple Watch Series 8
-                    </a>
-                    <p class="mt-2 text-base font-normal text-gray-500 ">
-                      This generation has some improvements, including a longer
-                      continuous battery life.
+                  {/* quantity and price end  */}
+                  {/* product description, add to favorites and remove buttons start */}
+                  <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-lg">
+                    <p class="text-base font-medium text-gray-900 hover:underline ">
+                      HP EliteBook 840 G9 Notebook PC
                     </p>
                   </div>
-                  <div>
-                    <p class="text-lg font-bold text-gray-900 ">
-                      <span class="line-through"> $1799,99 </span>
-                    </p>
-                    <p class="text-lg font-bold leading-tight text-red-600 ">
-                      $1199
-                    </p>
-                  </div>
-                  <div class="mt-6 flex items-center gap-2.5">
-                    <button
-                      data-tooltip-target="favourites-tooltip-3"
-                      type="button"
-                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100  "
-                    >
-                      <svg
-                        class="h-5 w-5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"
-                        ></path>
-                      </svg>
-                    </button>
-                    <div
-                      id="favourites-tooltip-3"
-                      role="tooltip"
-                      class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 "
-                    >
-                      Add to favourites
-                      <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
-
-                    <button
-                      type="button"
-                      class="inline-flex w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium  text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 "
-                    >
-                      <svg
-                        class="-ms-2 me-2 h-5 w-5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4"
-                        />
-                      </svg>
-                      Add to cart
-                    </button>
-                  </div>
+                  {/* product description, add to favorites and remove buttons start */}
                 </div>
               </div>
+              {/* single product end */}
+              {/* single product start */}
+              <div class="border-b border-gray-200 bg-white px-4 py-2 md:px-6 md:py-3">
+                <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-4 md:space-y-0">
+                  {/* product image start  */}
+                  <div class="flex-none md:order-1">
+                    <img
+                      class="w-20 mx-auto"
+                      src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"
+                      alt="imac image"
+                    />
+                  </div>
+                  {/* product image end  */}
+
+                  {/* quantity and price start  */}
+                  <label for="counter-input" class="sr-only">
+                    Choose quantity:
+                  </label>
+                  <div class="flex-none space-y-3 md:order-3 md:justify-end">
+                    <div class="flex items-center gap-4 gap-y-1 justify-center">
+                      <FavoriteButton />
+                      <DeleteButton />
+                    </div>
+                    <div className=" flex flex-col items-center gap-y-1 justify-between">
+                      <div class="flex order-6 gap-x-2 items-center">
+                        <button
+                          type="button"
+                          id="decrement-button"
+                          data-input-counter-decrement="counter-input"
+                          class="cursor-pointer inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
+                        >
+                          <svg
+                            class="h-2.5 w-2.5 text-gray-900 "
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 2"
+                          >
+                            <path
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M1 1h16"
+                            />
+                          </svg>
+                        </button>
+                        <input
+                          type="text"
+                          id="counter-input"
+                          data-input-counter
+                          class="w-10 shrink-0 border-1 rounded-xs bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 "
+                          placeholder=""
+                          value="2"
+                          required
+                        />
+                        <button
+                          type="button"
+                          id="increment-button"
+                          data-input-counter-increment="counter-input"
+                          class="cursor-pointer inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100   "
+                        >
+                          <svg
+                            class="h-2.5 w-2.5 text-gray-900 "
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 18"
+                          >
+                            <path
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 1v16M1 9h16"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="text-center md:order-4 md:w-32">
+                        <p class="text-base font-bold text-gray-900 ">$1,499</p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* quantity and price end  */}
+                  {/* product description, add to favorites and remove buttons start */}
+                  <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-lg">
+                    <p class="text-base font-medium text-gray-900 hover:underline ">
+                      HP EliteBook 840 G9 Notebook PC
+                    </p>
+                  </div>
+                  {/* product description, add to favorites and remove buttons start */}
+                </div>
+              </div>
+              {/* single product end */}
+            
             </div>
           </div>
 
@@ -887,12 +249,12 @@ const CartFlowbit = () => {
                 </dl>
               </div>
 
-              <a
-                href="#"
+              <Link
+                to="/checkout"
                 class="flex w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 "
               >
                 Proceed to Checkout
-              </a>
+              </Link>
 
               <div class="flex items-center justify-center gap-2">
                 <span class="text-sm font-normal text-gray-500 "> or </span>

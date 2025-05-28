@@ -3,6 +3,7 @@ import Cart from "./features/cart/Cart";
 import CartFlowbit from "./features/cart/CartFlowbit";
 import ProductList from "./features/product-list/ProductList";
 import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
     //only for demo purposes, this should be removed in production
     path: "/cart",
     element: <CartPage />,
+  },
+  {
+    //only for demo purposes, this should be removed in production
+    path: "/checkout",
+    element: <CheckoutPage />,
   },
 ]);
 
