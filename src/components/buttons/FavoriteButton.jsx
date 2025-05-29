@@ -7,10 +7,9 @@ const FavoriteButton = () => {
       <div className="animate-pulse animate-infinite animate-duration-1000">
         <input
           type="checkbox"
-          defaultChecked="checked"
           id="favorite"
           name="favorite-checkbox"
-          defaultValue="favorite-button"
+          defaultChecked={false}
         />
         <label htmlFor="favorite" className="container">
           <svg
