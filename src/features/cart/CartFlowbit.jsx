@@ -9,7 +9,7 @@ const CartFlowbit = (props) => {
   return (
     <section className="py-8 antialiased md:py-16">
       <div className="mx-auto max-w-screen-2xl bg-white px-4 2xl:px-6 py-2 md:py-4">
-        <h2 className=" text-xl font-bold text-gray-900 sm:text-3xl">
+        <h2 className=" text-xl font-bold text-gray-900 sm:text-3xl border-b md:border-0">
           Shopping Cart
         </h2>
 
@@ -18,18 +18,24 @@ const CartFlowbit = (props) => {
             page === "checkoutPage" ? "flex-col" : "flex-row"
           }`}
         >
-          {` ${page === "checkoutPage" ? "checkout" : "CART "}`}
+          {/* {` ${page === "checkoutPage" ? "checkout" : "CART "}`} */}
           <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
             <div class="relative overflow-x-auto shadow-md sm:rounded-xs">
               <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-                <thead class="hidden md:table-header-group text-xs text-gray-700 uppercase bg-gray-100 ">
+                <thead
+                  class={` ${
+                    page === "checkoutPage"
+                      ? "hidden "
+                      : "hidden md:table-header-group "
+                  } text-xs text-gray-700 uppercase bg-gray-100`}
+                >
                   <tr>
                     <th
                       scope="col"
                       class={` text-center ${
                         page === "checkoutPage"
                           ? "px-5 py-3 text-center"
-                          : "xl:px-16 py-3"
+                          : "xl:px-4 py-3"
                       }`}
                     >
                       Image
@@ -77,35 +83,36 @@ const CartFlowbit = (props) => {
                 <tbody className="space-y-4">
                   <tr class="bg-white border-b border-gray-200 hover:bg-gray-50">
                     <td
-                      class={`font-semibold text-gray-900 text-center  ${
-                        page === "checkoutPage" ? "p-2" : "p-4 "
+                      class={` w-1/5 ${
+                        page === "checkoutPage" ? "p-2" : "px-4 py-2"
                       }`}
                     >
                       <img
                         src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"
-                        class={` ${
+                        class={`mx-auto ${
                           page === "checkoutPage"
                             ? "w-16 max-w-full max-h-full"
-                            : "w-16 md:w-32 max-w-full max-h-full"
+                            : "w-16 md:w-24 amax-w-full amax-h-full"
                         }`}
                         alt="Apple Watch"
                       />
                     </td>
                     <td
-                      class={`font-semibold text-gray-900 text-center ${
+                      class={` w-1/5 font-semibold text-gray-900 text-center ${
                         page === "checkoutPage" ? "" : "xl:px-6 py-4"
                       }`}
                     >
                       Apple Watch
                     </td>
                     <td
-                      class={` font-semibold text-gray-900 text-center ${
+                      class={` w-1/5 font-semibold text-gray-900 text-center space-y-2 ${
                         page === "checkoutPage" ? "" : "xl:px-6 py-4"
                       }`}
                     >
+                      <p className="price md:hidden">$544</p>
                       <div class="flex justify-center items-center">
                         <button
-                          class="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200"
+                          class="inline-flex items-center justify-center p-1 me-1 md:me-3 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200"
                           type="button"
                         >
                           <span class="sr-only">Quantity button</span>
@@ -135,7 +142,7 @@ const CartFlowbit = (props) => {
                           />
                         </div>
                         <button
-                          class="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200"
+                          class="inline-flex items-center justify-center h-6 w-6 p-1 ms-1 md:ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200"
                           type="button"
                         >
                           <span class="sr-only">Quantity button</span>
@@ -158,14 +165,14 @@ const CartFlowbit = (props) => {
                       </div>
                     </td>
                     <td
-                      class={` font-semibold text-gray-900 text-center ${
+                      class={`hidden md:table-cell w-1/5 font-semibold text-gray-900 text-center ${
                         page === "checkoutPage" ? "" : "xl:px-6 py-4"
                       }`}
                     >
                       $599
                     </td>
                     <td
-                      class={` font-semibold text-gray-900 text-center ${
+                      class={` w-1/5 font-semibold text-gray-900 text-center ${
                         page === "checkoutPage" ? "" : "xl:px-6 py-4"
                       }`}
                     >
