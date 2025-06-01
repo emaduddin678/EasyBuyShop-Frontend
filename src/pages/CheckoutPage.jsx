@@ -360,7 +360,7 @@ const CheckoutPage = () => {
           </form>
         </div>
         <div className="lg:col-span-4">
-          <CartFlowbit page="checkoutPage" />
+          <CartFlowbit page="checkoutPage" nextPath="/payment" />
         </div>
       </div>
     </div>

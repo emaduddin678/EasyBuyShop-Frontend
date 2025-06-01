@@ -4,7 +4,7 @@ import DeleteButton from "../../components/buttons/DeleteButton";
 import FavoriteButton from "../../components/buttons/FavoriteButton";
 
 const CartFlowbit = (props) => {
-  const { page } = props;
+  const { page, nextPath } = props;
   console.log(page);
   return (
     <section className="py-8 antialiased md:py-16">
@@ -241,10 +241,12 @@ const CartFlowbit = (props) => {
               </div>
 
               <Link
-                to="/checkout"
+                to={nextPath ? nextPath : "/checkout"}
                 className="flex w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 "
               >
-                Proceed to Checkout
+                {nextPath === "/payment"
+                  ? "Payment Now"
+                  : "Proceed to Checkout"}
               </Link>
 
               <div className="flex items-center justify-center gap-2">
