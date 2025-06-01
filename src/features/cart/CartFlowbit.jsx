@@ -7,9 +7,9 @@ const CartFlowbit = (props) => {
   const { page, nextPath } = props;
   console.log(page);
   return (
-    <section className="py-8 antialiased md:py-16">
-      <div className="mx-auto max-w-screen-2xl bg-white px-4 2xl:px-6 py-2 md:py-4">
-        <h2 className=" text-xl font-bold text-gray-900 sm:text-3xl border-b md:border-0">
+    <section className="py-8 antialiased md:py-12">
+      <div className="mx-auto max-w-screen-2xl bg-white px-4 2xl:px-6 py-4 md:py-6">
+        <h2 className="text-xl font-bold text-gray-900 sm:text-3xl border-b md:border-0">
           Shopping Cart
         </h2>
 

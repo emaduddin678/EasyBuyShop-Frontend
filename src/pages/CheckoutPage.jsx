@@ -59,13 +59,13 @@ const CheckoutPage = () => {
     <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-9">
         <div className="lg:col-span-5">
-          <form>
+          <form className="bg-white px-4 py-4 md:py-6 mt-12">
             <div className="space-y-12">
               <div className="border-b border-gray-900/10 pb-12">
-                <h2 className="text-base/7 font-semibold text-gray-900">
+                <h2 className="text-2xl font-semibold leading-7 text-gray-900">
                   Personal Information
                 </h2>
-                <p className="mt-1 text-sm/6 text-gray-600">
+                <p className="mt-1 text-sm text-gray-600">
                   Use a permanent address where you can receive mail.
                 </p>
 
@@ -73,7 +73,7 @@ const CheckoutPage = () => {
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="first-name"
-                      className="block text-sm/6 font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900"
                     >
                       First name
                     </label>
@@ -83,7 +83,7 @@ const CheckoutPage = () => {
                         name="first-name"
                         type="text"
                         autoComplete="given-name"
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                       />
                     </div>
                   </div>
@@ -91,7 +91,7 @@ const CheckoutPage = () => {
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="last-name"
-                      className="block text-sm/6 font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900"
                     >
                       Last name
                     </label>
@@ -101,7 +101,7 @@ const CheckoutPage = () => {
                         name="last-name"
                         type="text"
                         autoComplete="family-name"
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                       />
                     </div>
                   </div>
@@ -109,7 +109,7 @@ const CheckoutPage = () => {
                   <div className="sm:col-span-4">
                     <label
                       htmlFor="email"
-                      className="block text-sm/6 font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900"
                     >
                       Email address
                     </label>
@@ -119,7 +119,7 @@ const CheckoutPage = () => {
                         name="email"
                         type="email"
                         autoComplete="email"
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                       />
                     </div>
                   </div>
@@ -127,7 +127,7 @@ const CheckoutPage = () => {
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="country"
-                      className="block text-sm/6 font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900"
                     >
                       Country
                     </label>
@@ -136,7 +136,7 @@ const CheckoutPage = () => {
                         id="country"
                         name="country"
                         autoComplete="country-name"
-                        className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                        className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                       >
                         <option>United States</option>
                         <option>Canada</option>
@@ -152,7 +152,7 @@ const CheckoutPage = () => {
                   <div className="col-span-full">
                     <label
                       htmlFor="street-address"
-                      className="block text-sm/6 font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900"
                     >
                       Street address
                     </label>
@@ -162,7 +162,7 @@ const CheckoutPage = () => {
                         name="street-address"
                         type="text"
                         autoComplete="street-address"
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                       />
                     </div>
                   </div>
@@ -170,7 +170,7 @@ const CheckoutPage = () => {
                   <div className="sm:col-span-2 sm:col-start-1">
                     <label
                       htmlFor="city"
-                      className="block text-sm/6 font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900"
                     >
                       City
                     </label>
@@ -180,7 +180,7 @@ const CheckoutPage = () => {
                         name="city"
                         type="text"
                         autoComplete="address-level2"
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                       />
                     </div>
                   </div>
@@ -188,7 +188,7 @@ const CheckoutPage = () => {
                   <div className="sm:col-span-2">
                     <label
                       htmlFor="region"
-                      className="block text-sm/6 font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900"
                     >
                       State / Province
                     </label>
@@ -198,7 +198,7 @@ const CheckoutPage = () => {
                         name="region"
                         type="text"
                         autoComplete="address-level1"
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                       />
                     </div>
                   </div>
@@ -206,7 +206,7 @@ const CheckoutPage = () => {
                   <div className="sm:col-span-2">
                     <label
                       htmlFor="postal-code"
-                      className="block text-sm/6 font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900"
                     >
                       ZIP / Postal code
                     </label>
@@ -216,7 +216,7 @@ const CheckoutPage = () => {
                         name="postal-code"
                         type="text"
                         autoComplete="postal-code"
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                       />
                     </div>
                   </div>
@@ -224,10 +224,10 @@ const CheckoutPage = () => {
               </div>
 
               <div className="border-b border-gray-900/10 pb-12">
-                <h2 className="text-base/7 font-semibold text-gray-900">
+                <h2 className="text-base font-semibold text-gray-900">
                   Address Information
                 </h2>
-                <p className="mt-1 text-sm/6 text-gray-600">
+                <p className="mt-1 text-sm text-gray-600">
                   Choose from Existing addresses
                 </p>
                 <ul role="list" className="divide-y divide-gray-100">
@@ -245,7 +245,7 @@ const CheckoutPage = () => {
                       >
                         <div className="flex min-w-0 gap-x-4">
                           <div className="min-w-0 flex-auto">
-                            <p className="text-sm/6 font-semibold text-gray-900">
+                            <p className="text-sm font-semibold text-gray-900">
                               {item.fullName}
                             </p>
                             <p className="mt-1 truncate text-xs/5 text-gray-500">
@@ -257,7 +257,7 @@ const CheckoutPage = () => {
                         </div>
 
                         <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                          <p className="text-sm/6 text-gray-900">
+                          <p className="text-sm text-gray-900">
                             Phone: <strong>{item.phone} </strong>
                           </p>
                           <p className="mt-1 text-xs/5 text-gray-500">
@@ -280,7 +280,7 @@ const CheckoutPage = () => {
                     >
                       <div className="flex min-w-0 gap-x-4">
                         <div className="min-w-0 flex-auto">
-                          <p className="text-sm/6 font-semibold text-gray-900">
+                          <p className="text-sm font-semibold text-gray-900">
                             Not this
                           </p>
                           <p className="mt-1 truncate text-xs/5 text-gray-500">
@@ -290,7 +290,7 @@ const CheckoutPage = () => {
                       </div>
 
                       <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                        <p className="text-sm/6 text-gray-900">
+                        <p className="text-sm text-gray-900">
                           Phone: <strong>... </strong>
                         </p>
                         <p className="mt-1 text-xs/5 text-gray-500">asdf</p>
@@ -301,10 +301,10 @@ const CheckoutPage = () => {
 
                 <div className="mt-10 space-y-10">
                   <fieldset>
-                    <legend className="text-sm/6 font-semibold text-gray-900">
+                    <legend className="text-sm font-semibold text-gray-900">
                       Payment Methods
                     </legend>
-                    <p className="mt-1 text-sm/6 text-gray-600">
+                    <p className="mt-1 text-sm text-gray-600">
                       Choose a payment method to use for this purchase.
                     </p>
                     <div className="mt-6 space-y-6">
@@ -318,7 +318,7 @@ const CheckoutPage = () => {
                         />
                         <label
                           htmlFor="cash"
-                          className="block text-sm/6 font-medium text-gray-900"
+                          className="block text-sm font-medium text-gray-900"
                         >
                           Cash
                         </label>
@@ -332,7 +332,7 @@ const CheckoutPage = () => {
                         />
                         <label
                           htmlFor="card"
-                          className="block text-sm/6 font-medium text-gray-900"
+                          className="block text-sm font-medium text-gray-900"
                         >
                           Card Payment
                         </label>
@@ -346,7 +346,7 @@ const CheckoutPage = () => {
             <div className="mt-6 flex items-center justify-end gap-x-6">
               <button
                 type="button"
-                className="text-sm/6 font-semibold text-gray-900"
+                className="text-sm font-semibold text-gray-900"
               >
                 Cancel
               </button>
