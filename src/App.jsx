@@ -1,7 +1,5 @@
 import "./App.css";
-import Cart from "./features/cart/Cart";
-import CartFlowbit from "./features/cart/CartFlowbit";
-import ProductList from "./features/product-list/ProductList";
+import ProductDetail from "./features/product/components/ProductDetails";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import HomePage from "./pages/HomePage";
@@ -28,6 +26,11 @@ const router = createBrowserRouter([
     //only for demo purposes, this should be removed in production
     path: "/checkout",
     element: <CheckoutPage />,
+  },
+  {
+    //only for demo purposes, this should be removed in production
+    path: "/product-detail",
+    element: <ProductDetail />,
   },
 ]);
 

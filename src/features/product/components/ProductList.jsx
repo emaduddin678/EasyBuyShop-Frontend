@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks.js";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks.js";
 import {
   increment,
   incrementAsync,
   incrementByAmount,
   selectCount,
   selectStatus,
-} from "./productListSlice.js";
+} from "../productSlice.js";
 
 const products = [
   {
