@@ -115,9 +115,11 @@ import {
   MinusIcon,
   PlusIcon,
   Squares2X2Icon,
+  StarIcon,
 } from "@heroicons/react/20/solid";
 import { Link } from "react-router";
 import RatingStars from "../../../components/rating/RatingStars.jsx";
+import RatingField from "../../../components/rating/RatingStars.jsx";
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -489,7 +491,12 @@ const ProductList = () => {
                               </h3>
                               <div className="mt-1 text-sm text-gray-500">
                                 {product.rating}
-                                <RatingStars />
+
+                                <RatingField
+                                  currentRating={2.6}
+                                  className="text-yellow-400 w-5 h-5"
+                                  icon={<StarIcon />}
+                                />
                               </div>
                             </div>
                             <p className="text-sm font-medium text-gray-900">
