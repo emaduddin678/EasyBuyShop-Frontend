@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks.js";
 import {
   increment,
@@ -7,8 +7,9 @@ import {
   selectCount,
   selectStatus,
 } from "../productSlice.js";
+import axios from "axios";
 
-const products = [
+const aproducts = [
   {
     id: 1,
     name: "Basic Tee",
@@ -116,6 +117,7 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
 import { Link } from "react-router";
+import RatingStars from "../../../components/rating/RatingStars.jsx";
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -168,12 +170,33 @@ function classNames(...classes) {
 }
 
 const ProductList = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   const dispatch = useAppDispatch();
   const count = useAppSelector(selectCount);
   const status = useAppSelector(selectStatus);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("https://dummyjson.com/products");
+        setProducts(response.data.products);
+      } catch (err) {
+        setError("Failed to fetch products");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) return <p className="text-center text-gray-500">Loading...</p>;
+  if (error) return <p className="text-center text-red-500">{error}</p>;
 
   return (
     <div className="bg-white">
@@ -443,30 +466,34 @@ const ProductList = () => {
                   {/* product list start  */}
                   <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                     {products.map((product) => (
-                      <Link to={"/product-detail"} key={product.id}>
+                      <Link
+                        // to={`/product-detail/${product.id}`}
+                        key={product.id}
+                      >
                         <div className="group relative">
-                          <img
-                            alt={product.imageAlt}
-                            src={product.imageSrc}
-                            className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
-                          />
+                          <div className="min-h-60 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
+                            <img
+                              alt={product.title}
+                              src={product.thumbnail}
+                              className="aspect-square rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-auto h-full w-full object-cover object-center lg:h-full lg:w-full"
+                            />
+                          </div>
                           <div className="mt-4 flex justify-between">
                             <div>
                               <h3 className="text-sm text-gray-700">
-                                <a href={product.href}>
-                                  <span
-                                    aria-hidden="true"
-                                    className="absolute inset-0"
-                                  />
-                                  {product.name}
-                                </a>
+                                <span
+                                  aria-hidden="true"
+                                  className="absolute inset-0"
+                                />
+                                {product.title}
                               </h3>
-                              <p className="mt-1 text-sm text-gray-500">
-                                {product.color}
-                              </p>
+                              <div className="mt-1 text-sm text-gray-500">
+                                {product.rating}
+                                <RatingStars />
+                              </div>
                             </div>
                             <p className="text-sm font-medium text-gray-900">
-                              {product.price}
+                              ${product.price}
                             </p>
                           </div>
                         </div>

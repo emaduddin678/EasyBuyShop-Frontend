@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignupPage />,
-  },
+  }, 
   {
     //only for demo purposes, this should be removed in production
     path: "/cart",
