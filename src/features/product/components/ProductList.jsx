@@ -471,10 +471,11 @@ const ProductList = () => {
                     {products.map((product) => (
                       <Link
                         // to={`/product-detail/${product.id}`}
+                        to={`/product-detail`}
                         key={product.id}
-                        className="h-full bg-indigo-100"
+                        className="h-full"
                       >
-                        <div className="group relative flex flex-col h-full">
+                        <div className="group relative flex flex-col h-full px-1 py-2 border-solid border-2 border-gray-200">
                           <div className="min-h-60 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
                             <img
                               alt={product.title}
@@ -482,7 +483,7 @@ const ProductList = () => {
                               className="aspect-square rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-auto h-full w-full object-cover object-center lg:h-full lg:w-full"
                             />
                           </div>
-                          <div className="mt-2 px-1 flex justify-between flex-1">
+                          <div className="pt-2 pb-1 px-1 flex justify-between flex-1">
                             <div className="flex flex-col">
                               <h3 className="text-sm text-gray-700">
                                 <span
@@ -503,15 +504,16 @@ const ProductList = () => {
                             <div>
                               <p className="text-sm font-medium text-gray-900">
                                 <TakaSign />
-                                {product.price}
-                              </p>
-                              <p className="text-sm font-medium text-gray-900">
-                                <TakaSign />
                                 {(
                                   product.price *
                                   (1 - product.discountPercentage / 100)
                                 ).toFixed(2)}
                               </p>
+
+                              <del className="text-sm font-medium text-gray-500">
+                                <TakaSign />
+                                {product.price}
+                              </del>
                             </div>
                           </div>
                         </div>
