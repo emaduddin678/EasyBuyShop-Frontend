@@ -1,14 +1,17 @@
-import { createAppSlice } from "../../app/createAppSlice";
-import { fetchCount } from "./productAPI.js";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-// Initial state
 const initialState = {
-  value: 0,
-  status: "idle",
+  products: [],
+  brands: [],
+  categories: [],
+  status: 'idle',
+  totalItems: 0,
+  selectedProduct: null,
 };
 
-export const counterSlice = createAppSlice({
-  name: "counter",
+
+export const productSlice = createSlice({
+  name: "product",
   initialState,
   reducers: (create) => ({
     increment: create.reducer((state) => {
@@ -20,8 +23,8 @@ export const counterSlice = createAppSlice({
     }),
     incrementAsync: create.asyncThunk(
       async (amount) => {
-        const response = await fetchCount(amount);
-        return response.data;
+        // const response = await fetchCount(amount);
+        // return response.data;
       },
       {
         pending: (state) => {
@@ -45,9 +48,9 @@ export const counterSlice = createAppSlice({
 
 // Export actions
 export const { increment, incrementByAmount, incrementAsync } =
-  counterSlice.actions;
+  productSlice.actions;
 
 // Export selectors
-export const { selectCount, selectStatus } = counterSlice.selectors;
+export const { selectCount, selectStatus } = productSlice.selectors;
 
-export default counterSlice.reducer;
+export default productSlice.reducer;

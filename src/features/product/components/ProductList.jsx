@@ -121,6 +121,7 @@ import { Link } from "react-router";
 import RatingStars from "../../../components/rating/RatingStars.jsx";
 import RatingField from "../../../components/rating/RatingStars.jsx";
 import TakaSign from "../../../components/icons/TakaSign.jsx";
+import { fetchAllProducts } from "../productAPI.js";
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -184,18 +185,18 @@ const ProductList = () => {
   const count = useAppSelector(selectCount);
   const status = useAppSelector(selectStatus);
   useEffect(() => {
-    const fetchProducts = async () => {
+    const getProducts = async () => {
       try {
-        const response = await axios.get("https://dummyjson.com/products");
-        setProducts(response.data.products);
+        setLoading(true);
+        const data = await fetchAllProducts();
+        setProducts(data);
       } catch (err) {
         setError("Failed to fetch products");
       } finally {
         setLoading(false);
       }
     };
-
-    fetchProducts();
+    getProducts();
   }, []);
 
   if (loading) return <p className="text-center text-gray-500">Loading...</p>;
