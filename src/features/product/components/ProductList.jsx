@@ -120,6 +120,7 @@ import {
 import { Link } from "react-router";
 import RatingStars from "../../../components/rating/RatingStars.jsx";
 import RatingField from "../../../components/rating/RatingStars.jsx";
+import TakaSign from "../../../components/icons/TakaSign.jsx";
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -471,8 +472,9 @@ const ProductList = () => {
                       <Link
                         // to={`/product-detail/${product.id}`}
                         key={product.id}
+                        className="h-full bg-indigo-100"
                       >
-                        <div className="group relative">
+                        <div className="group relative flex flex-col h-full">
                           <div className="min-h-60 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-60">
                             <img
                               alt={product.title}
@@ -480,8 +482,8 @@ const ProductList = () => {
                               className="aspect-square rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-auto h-full w-full object-cover object-center lg:h-full lg:w-full"
                             />
                           </div>
-                          <div className="mt-4 flex justify-between">
-                            <div>
+                          <div className="mt-2 px-1 flex justify-between flex-1">
+                            <div className="flex flex-col">
                               <h3 className="text-sm text-gray-700">
                                 <span
                                   aria-hidden="true"
@@ -489,9 +491,8 @@ const ProductList = () => {
                                 />
                                 {product.title}
                               </h3>
-                              <div className="mt-1 text-sm text-gray-500">
+                              <div className="flex-1 flex items-end gap-1 mt-1 text-sm font-medium text-gray-500">
                                 {product.rating}
-
                                 <RatingField
                                   currentRating={2.6}
                                   className="text-yellow-400 w-5 h-5"
@@ -499,9 +500,19 @@ const ProductList = () => {
                                 />
                               </div>
                             </div>
-                            <p className="text-sm font-medium text-gray-900">
-                              ${product.price}
-                            </p>
+                            <div>
+                              <p className="text-sm font-medium text-gray-900">
+                                <TakaSign />
+                                {product.price}
+                              </p>
+                              <p className="text-sm font-medium text-gray-900">
+                                <TakaSign />
+                                {(
+                                  product.price *
+                                  (1 - product.discountPercentage / 100)
+                                ).toFixed(2)}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </Link>
