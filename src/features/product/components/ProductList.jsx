@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks.js";
-import { clearSelectedProduct } from "../productSlice.js";
+import { clearSelectedProduct, selectAllProducts } from "../productSlice.js";
 import axios from "axios";
 
 import {
@@ -86,31 +86,31 @@ function classNames(...classes) {
 }
 
 const ProductList = () => {
-  const dispatch = useAppDispatch();
-  const products = useSelector((state) => state.product.products);
+  const dispatch = useDispatch();
+  const products = useSelector(selectAllProducts);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        setLoading(true);
-        const data = await fetchAllProducts();
-        setProducts(data);
-      } catch (err) {
-        setError("Failed to fetch products");
-      } finally {
-        setLoading(false);
-      }
-    };
-    getProducts();
-  }, []);
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const data = await fetchAllProducts();
+  //       setProducts(data);
+  //     } catch (err) {
+  //       setError("Failed to fetch products");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   getProducts();
+  // }, []);
 
-  if (loading) return <p className="text-center text-gray-500">Loading...</p>;
-  if (error) return <p className="text-center text-red-500">{error}</p>;
+  // if (loading) return <p className="text-center text-gray-500">Loading...</p>;
+  // if (error) return <p className="text-center text-red-500">{error}</p>;
 
   return (
     <div className="bg-white">

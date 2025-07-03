@@ -20,7 +20,7 @@ export const fetchAllProductsAsync = createAsyncThunk(
 );
 
 export const productSlice = createSlice({
-  name: "product",
+  name: "test",
   initialState,
   reducers: {
     clearSelectedProduct: (state) => {
