@@ -1,96 +1,8 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks.js";
-import {
-  increment,
-  incrementAsync,
-  incrementByAmount,
-  selectCount,
-  selectStatus,
-} from "../productSlice.js";
+import { clearSelectedProduct } from "../productSlice.js";
 import axios from "axios";
-
-const aproducts = [
-  {
-    id: 1,
-    name: "Basic Tee",
-    href: "#",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-01.jpg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: "$35",
-    color: "Black",
-  },
-  {
-    id: 2,
-    name: "Classic Hoodie",
-    href: "#",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-02.jpg",
-    imageAlt: "Front of men's Classic Hoodie in navy.",
-    price: "$60",
-    color: "Navy",
-  },
-  {
-    id: 3,
-    name: "Slim Fit Jeans",
-    href: "#",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-03.jpg",
-    imageAlt: "Pair of slim fit jeans in indigo wash.",
-    price: "$75",
-    color: "Indigo",
-  },
-  {
-    id: 4,
-    name: "Running Shoes",
-    href: "#",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-04.jpg",
-    imageAlt: "Black and white running shoes.",
-    price: "$90",
-    color: "Black/White",
-  },
-  {
-    id: 5,
-    name: "Canvas Backpack",
-    href: "#",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-04-related-product-01.jpg",
-    imageAlt: "Durable canvas backpack in olive.",
-    price: "$48",
-    color: "Olive",
-  },
-  {
-    id: 6,
-    name: "Cotton Cap",
-    href: "#",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-04-related-product-02.jpg",
-    imageAlt: "Adjustable cotton cap in khaki.",
-    price: "$22",
-    color: "Khaki",
-  },
-  {
-    id: 7,
-    name: "Leather Belt",
-    href: "#",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-04-related-product-03.jpg",
-    imageAlt: "Brown leather belt with silver buckle.",
-    price: "$30",
-    color: "Brown",
-  },
-  {
-    id: 8,
-    name: "Polo Shirt",
-    href: "#",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-04-related-product-04.jpg",
-    imageAlt: "Classic polo shirt in light blue.",
-    price: "$40",
-    color: "Light Blue",
-  },
-];
 
 import {
   Dialog,
@@ -174,16 +86,14 @@ function classNames(...classes) {
 }
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
+  const dispatch = useAppDispatch();
+  const products = useSelector((state) => state.product.products);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
-  const dispatch = useAppDispatch();
-  const count = useAppSelector(selectCount);
-  const status = useAppSelector(selectStatus);
   useEffect(() => {
     const getProducts = async () => {
       try {

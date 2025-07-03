@@ -6,13 +6,13 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks.js";
-import {
-  increment,
-  incrementAsync,
-  incrementByAmount,
-  selectCount,
-  selectStatus,
-} from "./cartSlice.js";
+// import {
+//   increment,
+//   incrementAsync,
+//   incrementByAmount,
+//   selectCount,
+//   selectStatus,
+// } from "./cartSlice.js";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
 const products = [

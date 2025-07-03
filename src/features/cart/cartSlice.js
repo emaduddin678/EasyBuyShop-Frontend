@@ -1,4 +1,4 @@
-import { createAppSlice } from "../../app/createAppSlice";
+import { buildCreateSlice } from "@reduxjs/toolkit";
 import { fetchCount } from "./cartAPI";
 
 // Initial state
@@ -7,8 +7,8 @@ const initialState = {
   status: "idle",
 };
 
-export const counterSlice = createAppSlice({
-  name: "counter",
+export const cartSlice = buildCreateSlice({
+  name: "cart",
   initialState,
   reducers: (create) => ({
     increment: create.reducer((state) => {
@@ -44,10 +44,10 @@ export const counterSlice = createAppSlice({
 });
 
 // Export actions
-export const { increment, incrementByAmount, incrementAsync } =
-  counterSlice.actions;
+// export const { increment, incrementByAmount, incrementAsync } =
+//   cartSlice.actions;
 
 // Export selectors
-export const { selectCount, selectStatus } = counterSlice.selectors;
+export const { selectCount, selectStatus } = cartSlice.selectors;
 
-export default counterSlice.reducer;
+export default cartSlice.reducer;

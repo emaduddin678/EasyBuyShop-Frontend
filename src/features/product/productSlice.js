@@ -1,56 +1,58 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { fetchAllProducts } from "./productAPI.js";
 
 const initialState = {
   products: [],
   brands: [],
   categories: [],
-  status: 'idle',
+  status: "idle",
   totalItems: 0,
   selectedProduct: null,
 };
 
+export const fetchAllProductsAsync = createAsyncThunk(
+  "product/fetchAllProducts",
+  async (params) => {
+    console.log("Fetching products with params:", params);
+    const response = await fetchAllProducts();
+    return response.data;
+  }
+);
 
 export const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: (create) => ({
-    increment: create.reducer((state) => {
-      state.value += 1;
-    }),
-
-    incrementByAmount: create.reducer((state, action) => {
-      state.value += action.payload;
-    }),
-    incrementAsync: create.asyncThunk(
-      async (amount) => {
-        // const response = await fetchCount(amount);
-        // return response.data;
-      },
-      {
-        pending: (state) => {
-          state.status = "loading";
-        },
-        fulfilled: (state, action) => {
-          state.status = "idle";
-          state.value += action.payload;
-        },
-        rejected: (state) => {
-          state.status = "failed";
-        },
-      }
-    ),
-  }),
-  selectors: {
-    selectCount: (counter) => counter.value,
-    selectStatus: (counter) => counter.status,
+  reducers: {
+    clearSelectedProduct: (state) => {
+      state.selectedProduct = null;
+    },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchAllProductsAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchAllProductsAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.products = action.payload;
+      });
+  },
+  // selectors: {
+  //   selectCount: (counter) => counter.value,
+  //   selectStatus: (counter) => counter.status,
+  // },
 });
 
 // Export actions
-export const { increment, incrementByAmount, incrementAsync } =
-  productSlice.actions;
+export const { clearSelectedProduct } = productSlice.actions;
 
 // Export selectors
-export const { selectCount, selectStatus } = productSlice.selectors;
+export const selectAllProducts = (state) => state.product.products;
+export const selectBrands = (state) => state.product.brands;
+export const selectCategories = (state) => state.product.categories;
+export const selectProductById = (state) => state.product.selectedProduct;
+export const selectProductListStatus = (state) => state.product.status;
+
+export const selectTotalItems = (state) => state.product.totalItems;
 
 export default productSlice.reducer;
