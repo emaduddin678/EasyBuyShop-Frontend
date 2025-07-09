@@ -15,7 +15,8 @@ export const fetchAllProductsAsync = createAsyncThunk(
   async (params) => {
     console.log("Fetching products with params:", params);
     const response = await fetchAllProducts();
-    return response.data;
+    console.log("Fetched products:", response);
+    return response;
   }
 );
 

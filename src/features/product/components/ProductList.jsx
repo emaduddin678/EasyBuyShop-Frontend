@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks.js";
-import { clearSelectedProduct, selectAllProducts } from "../productSlice.js";
+import {
+  clearSelectedProduct,
+  fetchAllProductsAsync,
+  selectAllProducts,
+} from "../productSlice.js";
 import axios from "axios";
 
 import {
@@ -112,6 +116,9 @@ const ProductList = () => {
   // if (loading) return <p className="text-center text-gray-500">Loading...</p>;
   // if (error) return <p className="text-center text-red-500">{error}</p>;
 
+  useEffect(() => {
+    dispatch(fetchAllProductsAsync());
+  }, []);
   return (
     <div className="bg-white">
       <div>
