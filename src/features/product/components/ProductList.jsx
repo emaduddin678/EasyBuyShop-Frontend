@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks.js";
 import {
   clearSelectedProduct,
   fetchAllProductsAsync,
+  fetchProductsByFilterAsync,
   selectAllProducts,
 } from "../productSlice.js";
 import axios from "axios";
@@ -500,43 +501,25 @@ const filters = [
   },
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const ProductList = () => {
   const dispatch = useDispatch();
   const products = useSelector(selectAllProducts);
-  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState({});
   const [error, setError] = useState(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     try {
-  //       setLoading(true);
-  //       const data = await fetchAllProducts();
-  //       setProducts(data);
-  //     } catch (err) {
-  //       setError("Failed to fetch products");
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-  //   getProducts();
-  // }, []);
-
-  // if (loading) return <p className="text-center text-gray-500">Loading...</p>;
-  // if (error) return <p className="text-center text-red-500">{error}</p>;
+  const handleFilter = (e, section, option) => {
+    const newFilter = { ...filter, [section.id]: option.value };
+    setFilter(newFilter);
+    dispatch(fetchProductsByFilterAsync(newFilter));
+  };
 
   useEffect(() => {
-    // console.log("Fetching ...");
     dispatch(fetchAllProductsAsync());
-    // console.log("Fetching products...");
-    console.log(new Set([...products.map((p) => p.category)]));
   }, [dispatch]);
+
   return (
     <div className="bg-white">
       <div>
@@ -550,7 +533,6 @@ const ProductList = () => {
             transition
             className="fixed inset-0 bg-black/25 transition-opacity duration-300 ease-linear data-closed:opacity-0"
           />
-
           <div className="fixed inset-0 z-40 flex">
             <DialogPanel
               transition
@@ -572,8 +554,8 @@ const ProductList = () => {
               <form className="mt-4 border-t border-gray-200">
                 {filters.map((section) => (
                   <Disclosure
-                    key={section.id}
                     as="div"
+                    key={section.id}
                     className="border-t border-gray-200 px-4 py-6"
                   >
                     <h3 className="-mx-2 -my-3 flow-root">
@@ -654,7 +636,7 @@ const ProductList = () => {
             <div className="flex items-center">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <MenuButton className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
+                  <MenuButton className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900 focus:ring-0 focus:outline-hidden focus:outline-none">
                     Sort
                     <ChevronDownIcon
                       aria-hidden="true"
@@ -672,12 +654,13 @@ const ProductList = () => {
                       <MenuItem key={option.name}>
                         <a
                           href={option.href}
-                          className={classNames(
+                          className={`${
                             option.current
                               ? "font-medium text-gray-900"
-                              : "text-gray-500",
-                            "block px-4 py-2 text-sm data-focus:bg-gray-100 data-focus:outline-hidden"
-                          )}
+                              : "text-gray-500"
+                          }
+                            block px-4 py-2 text-sm focus:ring-0 focus:outline-hidden focus:outline-none
+                          `}
                         >
                           {option.name}
                         </a>
@@ -743,11 +726,14 @@ const ProductList = () => {
                             <div className="flex h-5 shrink-0 items-center">
                               <div className="group grid size-4 grid-cols-1">
                                 <input
-                                  defaultValue={option.value}
-                                  defaultChecked={option.checked}
                                   id={`filter-${section.id}-${optionIdx}`}
                                   name={`${section.id}[]`}
+                                  defaultValue={option.value}
                                   type="checkbox"
+                                  defaultChecked={option.checked}
+                                  onChange={(e) =>
+                                    handleFilter(e, section, option)
+                                  }
                                   className="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
                                 />
                                 <svg

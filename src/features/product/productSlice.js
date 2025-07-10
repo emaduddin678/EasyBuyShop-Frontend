@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchAllProducts } from "./productAPI.js";
+import { fetchAllProducts, fetchProductsByFilter } from "./productAPI.js";
 
 const initialState = {
   products: [],
@@ -21,31 +21,39 @@ export const fetchAllProductsAsync = createAsyncThunk(
     // console.log([...response.map((p) => p.category)]);
     // console.log(new Set([...response.map((p) => p.category)]));
     // console.log(...new Set([...response.map((p) => p.category)]));
-    console.log(
-      [
-        ...new Set([
-          ...response.map((p) => {
-            return p.category;
-          }),
-        ]),
-      ].map((c) => {
-        // console.log(c);
-        return {
-          value: c,
-          label: c
-            .split("-")
-            .join(" ")
-            .split(" ")
-            .map(
-              (word) =>
-                word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-            )
-            .join(" ")
-            ,
-          checked: false,
-        };
-      })
-    );
+    // console.log(
+    //   [
+    //     ...new Set([
+    //       ...response.map((p) => {
+    //         return p.category;
+    //       }),
+    //     ]),
+    //   ].map((c) => {
+    //     // console.log(c);
+    //     return {
+    //       value: c,
+    //       label: c
+    //         .split("-")
+    //         .join(" ")
+    //         .split(" ")
+    //         .map(
+    //           (word) =>
+    //             word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+    //         )
+    //         .join(" ")
+    //         ,
+    //       checked: false,
+    //     };
+    //   })
+    // );
+    return response;
+  }
+);
+export const fetchProductsByFilterAsync = createAsyncThunk(
+  "product/fetchProductsByFilter",
+  async (filter) => {
+    const response = await fetchProductsByFilter(filter);
+    console.log(response);
     return response;
   }
 );
@@ -64,6 +72,13 @@ export const productSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchAllProductsAsync.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.products = action.payload;
+      })
+      .addCase(fetchProductsByFilterAsync.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchProductsByFilterAsync.fulfilled, (state, action) => {
         state.status = "idle";
         state.products = action.payload;
       });
