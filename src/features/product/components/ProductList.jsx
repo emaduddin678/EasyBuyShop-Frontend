@@ -49,38 +49,453 @@ const sortOptions = [
 
 const filters = [
   {
-    id: "color",
-    name: "Color",
-    options: [
-      { value: "white", label: "White", checked: false },
-      { value: "beige", label: "Beige", checked: false },
-      { value: "blue", label: "Blue", checked: true },
-      { value: "brown", label: "Brown", checked: false },
-      { value: "green", label: "Green", checked: false },
-      { value: "purple", label: "Purple", checked: false },
-    ],
-  },
-  {
     id: "category",
     name: "Category",
     options: [
-      { value: "new-arrivals", label: "New Arrivals", checked: false },
-      { value: "sale", label: "Sale", checked: false },
-      { value: "travel", label: "Travel", checked: true },
-      { value: "organization", label: "Organization", checked: false },
-      { value: "accessories", label: "Accessories", checked: false },
+      {
+        value: "beauty",
+        label: "Beauty",
+        checked: false,
+      },
+      {
+        value: "fragrances",
+        label: "Fragrances",
+        checked: false,
+      },
+      {
+        value: "furniture",
+        label: "Furniture",
+        checked: false,
+      },
+      {
+        value: "groceries",
+        label: "Groceries",
+        checked: false,
+      },
+      {
+        value: "home-decoration",
+        label: "Home Decoration",
+        checked: false,
+      },
+      {
+        value: "kitchen-accessories",
+        label: "Kitchen Accessories",
+        checked: false,
+      },
+      {
+        value: "laptops",
+        label: "Laptops",
+        checked: false,
+      },
+      {
+        value: "mens-shirts",
+        label: "Mens Shirts",
+        checked: false,
+      },
+      {
+        value: "mens-shoes",
+        label: "Mens Shoes",
+        checked: false,
+      },
+      {
+        value: "mens-watches",
+        label: "Mens Watches",
+        checked: false,
+      },
+      {
+        value: "mobile-accessories",
+        label: "Mobile Accessories",
+        checked: false,
+      },
+      {
+        value: "motorcycle",
+        label: "Motorcycle",
+        checked: false,
+      },
+      {
+        value: "skin-care",
+        label: "Skin Care",
+        checked: false,
+      },
+      {
+        value: "smartphones",
+        label: "Smartphones",
+        checked: false,
+      },
+      {
+        value: "sports-accessories",
+        label: "Sports Accessories",
+        checked: false,
+      },
+      {
+        value: "sunglasses",
+        label: "Sunglasses",
+        checked: false,
+      },
+      {
+        value: "tablets",
+        label: "Tablets",
+        checked: false,
+      },
+      {
+        value: "tops",
+        label: "Tops",
+        checked: false,
+      },
+      {
+        value: "vehicle",
+        label: "Vehicle",
+        checked: false,
+      },
+      {
+        value: "womens-bags",
+        label: "Womens Bags",
+        checked: false,
+      },
+      {
+        value: "womens-dresses",
+        label: "Womens Dresses",
+        checked: false,
+      },
+      {
+        value: "womens-jewellery",
+        label: "Womens Jewellery",
+        checked: false,
+      },
+      {
+        value: "womens-shoes",
+        label: "Womens Shoes",
+        checked: false,
+      },
+      {
+        value: "womens-watches",
+        label: "Womens Watches",
+        checked: false,
+      },
     ],
   },
   {
-    id: "size",
-    name: "Size",
+    id: "brand",
+    name: "Brand",
     options: [
-      { value: "2l", label: "2L", checked: false },
-      { value: "6l", label: "6L", checked: false },
-      { value: "12l", label: "12L", checked: false },
-      { value: "18l", label: "18L", checked: false },
-      { value: "20l", label: "20L", checked: false },
-      { value: "40l", label: "40L", checked: true },
+      {
+        value: "Essence",
+        label: "Essence",
+        checked: false,
+      },
+      {
+        value: "Glamour Beauty",
+        label: "Glamour Beauty",
+        checked: false,
+      },
+      {
+        value: "Velvet Touch",
+        label: "Velvet Touch",
+        checked: false,
+      },
+      {
+        value: "Chic Cosmetics",
+        label: "Chic Cosmetics",
+        checked: false,
+      },
+      {
+        value: "Nail Couture",
+        label: "Nail Couture",
+        checked: false,
+      },
+      {
+        value: "Calvin Klein",
+        label: "Calvin Klein",
+        checked: false,
+      },
+      {
+        value: "Chanel",
+        label: "Chanel",
+        checked: false,
+      },
+      {
+        value: "Dior",
+        label: "Dior",
+        checked: false,
+      },
+      {
+        value: "Dolce & Gabbana",
+        label: "Dolce & Gabbana",
+        checked: false,
+      },
+      {
+        value: "Gucci",
+        label: "Gucci",
+        checked: false,
+      },
+      {
+        value: "Annibale Colombo",
+        label: "Annibale Colombo",
+        checked: false,
+      },
+      {
+        value: "Furniture Co.",
+        label: "Furniture Co.",
+        checked: false,
+      },
+      {
+        value: "Knoll",
+        label: "Knoll",
+        checked: false,
+      },
+      {
+        value: "Bath Trends",
+        label: "Bath Trends",
+        checked: false,
+      },
+      {
+        checked: false,
+      },
+      {
+        value: "Apple",
+        label: "Apple",
+        checked: false,
+      },
+      {
+        value: "Asus",
+        label: "Asus",
+        checked: false,
+      },
+      {
+        value: "Huawei",
+        label: "Huawei",
+        checked: false,
+      },
+      {
+        value: "Lenovo",
+        label: "Lenovo",
+        checked: false,
+      },
+      {
+        value: "Dell",
+        label: "Dell",
+        checked: false,
+      },
+      {
+        value: "Fashion Trends",
+        label: "Fashion Trends",
+        checked: false,
+      },
+      {
+        value: "Gigabyte",
+        label: "Gigabyte",
+        checked: false,
+      },
+      {
+        value: "Classic Wear",
+        label: "Classic Wear",
+        checked: false,
+      },
+      {
+        value: "Casual Comfort",
+        label: "Casual Comfort",
+        checked: false,
+      },
+      {
+        value: "Urban Chic",
+        label: "Urban Chic",
+        checked: false,
+      },
+      {
+        value: "Nike",
+        label: "Nike",
+        checked: false,
+      },
+      {
+        value: "Puma",
+        label: "Puma",
+        checked: false,
+      },
+      {
+        value: "Off White",
+        label: "Off White",
+        checked: false,
+      },
+      {
+        value: "Fashion Timepieces",
+        label: "Fashion Timepieces",
+        checked: false,
+      },
+      {
+        value: "Longines",
+        label: "Longines",
+        checked: false,
+      },
+      {
+        value: "Rolex",
+        label: "Rolex",
+        checked: false,
+      },
+      {
+        value: "Amazon",
+        label: "Amazon",
+        checked: false,
+      },
+      {
+        value: "Beats",
+        label: "Beats",
+        checked: false,
+      },
+      {
+        value: "TechGear",
+        label: "TechGear",
+        checked: false,
+      },
+      {
+        value: "GadgetMaster",
+        label: "GadgetMaster",
+        checked: false,
+      },
+      {
+        value: "SnapTech",
+        label: "SnapTech",
+        checked: false,
+      },
+      {
+        value: "ProVision",
+        label: "ProVision",
+        checked: false,
+      },
+      {
+        value: "Generic Motors",
+        label: "Generic Motors",
+        checked: false,
+      },
+      {
+        value: "Kawasaki",
+        label: "Kawasaki",
+        checked: false,
+      },
+      {
+        value: "MotoGP",
+        label: "MotoGP",
+        checked: false,
+      },
+      {
+        value: "ScootMaster",
+        label: "ScootMaster",
+        checked: false,
+      },
+      {
+        value: "SpeedMaster",
+        label: "SpeedMaster",
+        checked: false,
+      },
+      {
+        value: "Attitude",
+        label: "Attitude",
+        checked: false,
+      },
+      {
+        value: "Olay",
+        label: "Olay",
+        checked: false,
+      },
+      {
+        value: "Vaseline",
+        label: "Vaseline",
+        checked: false,
+      },
+      {
+        value: "Oppo",
+        label: "Oppo",
+        checked: false,
+      },
+      {
+        value: "Realme",
+        label: "Realme",
+        checked: false,
+      },
+      {
+        value: "Samsung",
+        label: "Samsung",
+        checked: false,
+      },
+      {
+        value: "Vivo",
+        label: "Vivo",
+        checked: false,
+      },
+      {
+        value: "Fashion Shades",
+        label: "Fashion Shades",
+        checked: false,
+      },
+      {
+        value: "Fashion Fun",
+        label: "Fashion Fun",
+        checked: false,
+      },
+      {
+        value: "Chrysler",
+        label: "Chrysler",
+        checked: false,
+      },
+      {
+        value: "Dodge",
+        label: "Dodge",
+        checked: false,
+      },
+      {
+        value: "Fashionista",
+        label: "Fashionista",
+        checked: false,
+      },
+      {
+        value: "Heshe",
+        label: "Heshe",
+        checked: false,
+      },
+      {
+        value: "Prada",
+        label: "Prada",
+        checked: false,
+      },
+      {
+        value: "Elegance Collection",
+        label: "Elegance Collection",
+        checked: false,
+      },
+      {
+        value: "Comfort Trends",
+        label: "Comfort Trends",
+        checked: false,
+      },
+      {
+        value: "Fashion Diva",
+        label: "Fashion Diva",
+        checked: false,
+      },
+      {
+        value: "Pampi",
+        label: "Pampi",
+        checked: false,
+      },
+      {
+        value: "Fashion Express",
+        label: "Fashion Express",
+        checked: false,
+      },
+      {
+        value: "IWC",
+        label: "IWC",
+        checked: false,
+      },
+      {
+        value: "Fashion Gold",
+        label: "Fashion Gold",
+        checked: false,
+      },
+      {
+        value: "Fashion Co.",
+        label: "Fashion Co.",
+        checked: false,
+      },
     ],
   },
 ];
@@ -117,8 +532,11 @@ const ProductList = () => {
   // if (error) return <p className="text-center text-red-500">{error}</p>;
 
   useEffect(() => {
+    // console.log("Fetching ...");
     dispatch(fetchAllProductsAsync());
-  }, []);
+    // console.log("Fetching products...");
+    console.log(new Set([...products.map((p) => p.category)]));
+  }, [dispatch]);
   return (
     <div className="bg-white">
       <div>

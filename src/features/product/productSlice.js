@@ -13,9 +13,39 @@ const initialState = {
 export const fetchAllProductsAsync = createAsyncThunk(
   "product/fetchAllProducts",
   async (params) => {
-    console.log("Fetching products with params:", params);
+    // console.log("Fetching products with params:", params);
     const response = await fetchAllProducts();
-    console.log("Fetched products:", response);
+    // console.log("Fetched products:", response);
+    // console.log(response.map((p) => p.category));
+    // console.log(...response.map((p) => p.category));
+    // console.log([...response.map((p) => p.category)]);
+    // console.log(new Set([...response.map((p) => p.category)]));
+    // console.log(...new Set([...response.map((p) => p.category)]));
+    console.log(
+      [
+        ...new Set([
+          ...response.map((p) => {
+            return p.category;
+          }),
+        ]),
+      ].map((c) => {
+        // console.log(c);
+        return {
+          value: c,
+          label: c
+            .split("-")
+            .join(" ")
+            .split(" ")
+            .map(
+              (word) =>
+                word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+            )
+            .join(" ")
+            ,
+          checked: false,
+        };
+      })
+    );
     return response;
   }
 );
@@ -23,11 +53,11 @@ export const fetchAllProductsAsync = createAsyncThunk(
 export const productSlice = createSlice({
   name: "test",
   initialState,
-  reducers: {
-    clearSelectedProduct: (state) => {
-      state.selectedProduct = null;
-    },
-  },
+  // reducers: {
+  //   clearSelectedProduct: (state) => {
+  //     state.selectedProduct = null;
+  //   },
+  // },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllProductsAsync.pending, (state) => {
